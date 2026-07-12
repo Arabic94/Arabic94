@@ -21,19 +21,12 @@ function shuffle(arr) {
 }
 
 function speak(word, onEnd) {
-  const path = `/audio/ana.mp3`;
-  console.log("Audio path:", path);
-
-  const audio = new Audio(path);
-
-  audio.onerror = (e) => {
-    console.log("Audio failed:", e);
-  };
+const audio = new Audio(`/audio/ana.mp3`);
 
   if (onEnd) audio.onended = onEnd;
-
   audio.play();
 }
+
 // ─── Main App ───────────────────────────────────────────────────────────────
 export default function ArabicReader() {
   // currentIdx = index of the first word in the CURRENT unlocked batch (0,5,10,...)
