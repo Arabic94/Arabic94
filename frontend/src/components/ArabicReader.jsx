@@ -21,7 +21,7 @@ function shuffle(arr) {
 }
 
 function speak(word, onEnd) {
-  const path = `/audio/${word}.mp3`;
+  const path = `/audio/ana.mp3`;
   console.log("Audio path:", path);
 
   const audio = new Audio(path);
