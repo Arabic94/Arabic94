@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 const WORDS = [
-  "هههههههههههه","أنت","هو","هي","نحن","هم","هذا","هذه","ذلك","هنا",
+  "أنا","أنت","هو","هي","نحن","هم","هذا","هذه","ذلك","هنا",
   "هناك","في","على","إلى","من","عن","مع","بين","تحت","فوق",
   "ثم","و","أو","لكن","لأن","نعم","لا","كل","بعض","كثير",
   "قليل","اليوم","أمس","غدًا","صباح","مساء","بيت","باب","نافذة","غرفة",
@@ -20,22 +20,13 @@ function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
-function speak(audioSource, onEnd) {
-  // بنمرر مصدر الصوت الجاهز للدالة مباشرة
-  const audio = new Audio(audioSource);
+function speak(word, onEnd) {
+const audio = new Audio(`/audio/${word}.mp3`);
+
 
   if (onEnd) audio.onended = onEnd;
-  
-  audio.play().catch(err => {
-    console.error("خطأ في تشغيل الصوت:", err);
-  });
+  audio.play();
 }
-
-// وطريقة استدعائها في مكوناتك (Components) هتكون كالتالي:
-import anaAudio from './assets/audio/ana.mp3'; // يفضل تغيير الاسم من "أنا" إلى "ana"
-
-// عند الاستخدام:
-speak(anaAudio, () => console.log("انتهى الصوت"));
 
 // ─── Main App ───────────────────────────────────────────────────────────────
 export default function ArabicReader() {
@@ -80,7 +71,7 @@ export default function ArabicReader() {
 
   // ── Learn phase: speak current ──
   function handleSpeak() {
-    setBubbleMsg("استمع نووووو... 👂");
+    setBubbleMsg("استمع جيداً... 👂");
     speakWord(currentWord);
   }
 
