@@ -20,13 +20,22 @@ function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
-function speak(word, onEnd) {
-const audio = new Audio(`/audio/${word}.mp3`);
-
+function speak(audioSource, onEnd) {
+  // بنمرر مصدر الصوت الجاهز للدالة مباشرة
+  const audio = new Audio(audioSource);
 
   if (onEnd) audio.onended = onEnd;
-  audio.play();
+  
+  audio.play().catch(err => {
+    console.error("خطأ في تشغيل الصوت:", err);
+  });
 }
+
+// وطريقة استدعائها في مكوناتك (Components) هتكون كالتالي:
+import anaAudio from './assets/audio/ana.mp3'; // يفضل تغيير الاسم من "أنا" إلى "ana"
+
+// عند الاستخدام:
+speak(anaAudio, () => console.log("انتهى الصوت"));
 
 // ─── Main App ───────────────────────────────────────────────────────────────
 export default function ArabicReader() {
