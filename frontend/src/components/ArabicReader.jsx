@@ -21,7 +21,7 @@ function shuffle(arr) {
 }
 
 function speak(word, onEnd) {
-  const audio = new Audio(`/audio/${word}.mp3`);
+  const audio = new Audio(`./audio/${word}.mp3`);
 
   if (onEnd) audio.onended = onEnd;
   
