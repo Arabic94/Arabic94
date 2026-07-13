@@ -21,11 +21,14 @@ function shuffle(arr) {
 }
 
 function speak(word, onEnd) {
-const audio = new Audio(`/audio/${word}.mp3`);
-
+  const audio = new Audio(`/audio/${word}.mp3`);
 
   if (onEnd) audio.onended = onEnd;
-  audio.play();
+  
+  // الـ catch ده بيحمي الكود لو الملف مش موجود أو المتصفح منعه
+  audio.play().catch(err => {
+    console.error(`تعذر تشغيل الصوت للكلمة: ${word}`, err);
+  });
 }
 
 // ─── Main App ───────────────────────────────────────────────────────────────
