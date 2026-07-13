@@ -308,7 +308,7 @@ export default function ArabicReader() {
               ← السابقة
             </button>
             <button style={styles.btnPrimary} onClick={handleNext}>
-              {wordPos === 4 ? "🎯 ابدأ الاختبار" : "التالية →"}
+              {wordPos === 4 ? "🎯 ابدأ الاختبار" : "نوووووو →"}
             </button>
           </div>
         </div>
