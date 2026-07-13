@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-const API = "http://localhost:5000/api";
-
+const API = "https://arabic94.onrender.com";
 const WORDS = [
   "أنا",
   "أنت",

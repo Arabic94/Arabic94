@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
   res.json({ status: "ok", service: "arabic-reader-backend-neon" });
 });
 
-app.use("/api", authRoutes);
-app.use("/api/student", progressRoutes);
+app.use("/", authRoutes);
+app.use("/student", progressRoutes);
 
 const PORT = process.env.PORT || 5000;
 
