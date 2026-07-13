@@ -80,7 +80,7 @@ export default function ArabicReader() {
 
   // ── Learn phase: speak current ──
   function handleSpeak() {
-    setBubbleMsg("استمع جيداً... 👂");
+    setBubbleMsg("استمع نووووو... 👂");
     speakWord(currentWord);
   }
 
