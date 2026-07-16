@@ -687,6 +687,7 @@ async function handleContinue() {
             >
               تسجيل الدخول
             </button>
+            {/*
             <button
               style={
                 authMode === "register" ? styles.tabActive : styles.tabInactive
@@ -697,7 +698,7 @@ async function handleContinue() {
               }}
             >
               حساب جديد
-            </button>
+            </button>*/}
           </div>
 
           <input
@@ -744,10 +745,8 @@ async function handleContinue() {
                 : "إنشاء الحساب →"}
           </button>
 
-          <div style={styles.hintNote}>
-            ملاحظة: الحسابات تُحفظ على نفس هذا الرابط ويمكن لأي شخص يستخدم نفس
-            الرابط رؤية قائمة الأسماء المسجّلة.
-          </div>
+          <div style={styles.hintNote}>للاستفسار عن خدماتنا الاخرى او لملاحظاتكم عن هذه الخدمة يمكنكم التواصل على
+            0799142612</div>
         </div>
       </div>
     );
